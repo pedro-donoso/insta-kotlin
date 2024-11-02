@@ -23,17 +23,20 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ProfileHeader(
+    backClick: () -> Unit = {},
+    notificationClick: () -> Unit = {},
+    optionsClick: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
         Box {
             Row (verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = { /*TODO*/ }) {
+                IconButton(onClick = backClick) {
                     Icon(imageVector = Icons.Default.ArrowBack,
                         contentDescription = "arrow back")
                 }
@@ -43,20 +46,26 @@ fun ProfileHeader(
                 )
             }
         }
-        ProfileHeaderOptions()
+        ProfileHeaderOptions(
+            notificationClick = notificationClick,
+            optionsClick = optionsClick,
+            modifier = Modifier
+        )
     }
 }
 
 @Composable
 private fun ProfileHeaderOptions(
+    notificationClick: () -> Unit,
+    optionsClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = notificationClick) {
             Icon(imageVector = Icons.Outlined.Notifications,
                 contentDescription = "notifications")
         }
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = optionsClick) {
             Icon(imageVector = Icons.Default.MoreVert,
                 contentDescription = "options")
         }
