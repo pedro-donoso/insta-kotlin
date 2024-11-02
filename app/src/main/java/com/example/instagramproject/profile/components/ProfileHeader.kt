@@ -22,7 +22,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ProfileHeader() {
+fun ProfileHeader(
+    modifier: Modifier = Modifier
+) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -46,8 +48,10 @@ fun ProfileHeader() {
 }
 
 @Composable
-private fun ProfileHeaderOptions() {
-    Row {
+private fun ProfileHeaderOptions(
+    modifier: Modifier = Modifier
+) {
+    Row(modifier = modifier) {
         IconButton(onClick = { /*TODO*/ }) {
             Icon(imageVector = Icons.Outlined.Notifications,
                 contentDescription = "notifications")
