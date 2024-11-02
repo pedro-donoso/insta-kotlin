@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import coil.compose.AsyncImage
 
 @Composable
 fun ProfileInformation(
@@ -19,6 +20,10 @@ fun ProfileInformation(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
+        AsyncImage(
+            model = "https://randomuser.me/api/portraits/men/1.jpg",
+            contentDescription = "profile image"
+        )
         ProfileInformationItem(15, "Publicaciones")
         ProfileInformationItem(388, "Seguidores")
         ProfileInformationItem(360, "Seguidos")
