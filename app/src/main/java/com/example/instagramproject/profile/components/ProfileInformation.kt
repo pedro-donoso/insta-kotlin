@@ -4,10 +4,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
@@ -18,11 +20,13 @@ fun ProfileInformation(
 ) {
     Row (
         modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceAround
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         AsyncImage(
             model = "https://randomuser.me/api/portraits/men/1.jpg",
-            contentDescription = "profile image"
+            contentDescription = "profile image",
+            modifier = Modifier.clip(CircleShape)
         )
         ProfileInformationItem(15, "Publicaciones")
         ProfileInformationItem(388, "Seguidores")
