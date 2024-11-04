@@ -11,6 +11,7 @@ import com.example.instagramproject.profile.components.ProfileAction
 import com.example.instagramproject.profile.components.ProfileDescription
 import com.example.instagramproject.profile.components.ProfileHeader
 import com.example.instagramproject.profile.components.ProfileInformation
+import com.example.instagramproject.profile.components.ProfileStory
 
 @Composable
 fun ProfileScreen() {
@@ -23,25 +24,14 @@ fun ProfileScreen() {
         following = 360,
         name = "Pedro",
         description = "Mi gran descripción",
-        stories = listOf(
-            Story("https://randomuser.me/api/portraits/men/1.jpg", "Story 1"),
-            Story("https://randomuser.me/api/portraits/men/2.jpg", "Story 2"),
-            Story("https://randomuser.me/api/portraits/men/3.jpg", "Story 3"),
-            Story("https://randomuser.me/api/portraits/men/4.jpg", "Story 4"),
-            Story("https://randomuser.me/api/portraits/men/5.jpg", "Story 5"),
-            Story("https://randomuser.me/api/portraits/men/6.jpg", "Story 6"),
-            Story("https://randomuser.me/api/portraits/men/7.jpg", "Story 7"),
-            Story("https://randomuser.me/api/portraits/men/8.jpg", "Story 8"),
-            Story("https://randomuser.me/api/portraits/men/9.jpg", "Story 9"),
-            Story("https://randomuser.me/api/portraits/men/10.jpg", "Story 10")
-        )
+        stories = createStories() // Llama a la función para crear historias
     )
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(top = 30.dp)
-    ){
+    ) {
         ProfileHeader(
             backClick = {},
             notificationClick = {},
@@ -62,7 +52,32 @@ fun ProfileScreen() {
         ProfileAction(
             modifier = Modifier.padding(start = 16.dp, end = 16.dp)
         )
+        ProfileStory(
+            stories = user.stories
+        )
     }
+}
+
+// Función para crear historias usando forEach
+fun createStories(): List<Story> {
+    val storyUrls = listOf(
+        "https://randomuser.me/api/portraits/men/2.jpg",
+        "https://randomuser.me/api/portraits/men/3.jpg",
+        "https://randomuser.me/api/portraits/men/4.jpg",
+        "https://randomuser.me/api/portraits/men/5.jpg",
+        "https://randomuser.me/api/portraits/men/6.jpg",
+        "https://randomuser.me/api/portraits/men/7.jpg",
+        "https://randomuser.me/api/portraits/men/8.jpg",
+        "https://randomuser.me/api/portraits/men/9.jpg"
+    )
+
+    val stories = mutableListOf<Story>()
+
+    storyUrls.forEachIndexed { index, url ->
+        stories.add(Story(url, "Story ${index + 1}"))
+    }
+
+    return stories
 }
 
 @Preview(showBackground = true)
