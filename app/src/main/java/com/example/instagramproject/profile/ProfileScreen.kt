@@ -53,7 +53,8 @@ fun ProfileScreen() {
             modifier = Modifier.padding(start = 16.dp, end = 16.dp)
         )
         ProfileStory(
-            stories = user.stories
+            stories = user.stories,
+            modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
         )
     }
 }
