@@ -14,6 +14,16 @@ import com.example.instagramproject.profile.components.ProfileInformation
 @Composable
 fun ProfileScreen() {
 
+    val user = User(
+        username = "odikil999",
+        profileImageUrl = "https://randomuser.me/api/portraits/men/1.jpg",
+        posts = 15,
+        followers = 388,
+        following = 360,
+        name = "Pedro",
+        description = "Mi gran descripción"
+    )
+
     Column(
         modifier = Modifier
             .fillMaxSize()
