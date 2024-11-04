@@ -1,7 +1,9 @@
 package com.example.instagramproject.profile.components
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -17,8 +19,9 @@ fun ProfileAction(
     modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier.fillMaxWidth()) {
-        ProfileButton(onClick = {}, text = "Seguir")
-        ProfileButton(onClick = {}, text = "Mensaje")
+        ProfileButton(onClick = {}, text = "Seguir", modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.width(8.dp))
+        ProfileButton(onClick = {}, text = "Mensaje", modifier = Modifier.weight(1f))
     }
 }
 

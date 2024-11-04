@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.instagramproject.profile.components.ProfileAction
 import com.example.instagramproject.profile.components.ProfileDescription
 import com.example.instagramproject.profile.components.ProfileHeader
 import com.example.instagramproject.profile.components.ProfileInformation
@@ -46,6 +47,7 @@ fun ProfileScreen() {
             description = user.description,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 4.dp)
         )
+        ProfileAction()
     }
 }
 
