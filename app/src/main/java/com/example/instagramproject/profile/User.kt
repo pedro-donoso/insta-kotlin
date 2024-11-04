@@ -7,6 +7,11 @@ data class User(
     val followers: Int,
     val following: Int,
     val name: String,
-    val description: String
+    val description: String,
+    val stories: List<Story>
 )
 
+data class Story(
+    val image: String,
+    val text: String
+)
