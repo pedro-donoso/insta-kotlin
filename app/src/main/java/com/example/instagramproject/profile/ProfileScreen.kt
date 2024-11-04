@@ -47,7 +47,9 @@ fun ProfileScreen() {
             description = user.description,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 4.dp)
         )
-        ProfileAction()
+        ProfileAction(
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp)
+        )
     }
 }
 
