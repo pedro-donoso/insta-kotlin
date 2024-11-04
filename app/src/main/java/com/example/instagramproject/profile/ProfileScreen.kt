@@ -22,7 +22,19 @@ fun ProfileScreen() {
         followers = 388,
         following = 360,
         name = "Pedro",
-        description = "Mi gran descripción"
+        description = "Mi gran descripción",
+        stories = listOf(
+            Story("https://randomuser.me/api/portraits/men/1.jpg", "Story 1"),
+            Story("https://randomuser.me/api/portraits/men/2.jpg", "Story 2"),
+            Story("https://randomuser.me/api/portraits/men/3.jpg", "Story 3"),
+            Story("https://randomuser.me/api/portraits/men/4.jpg", "Story 4"),
+            Story("https://randomuser.me/api/portraits/men/5.jpg", "Story 5"),
+            Story("https://randomuser.me/api/portraits/men/6.jpg", "Story 6"),
+            Story("https://randomuser.me/api/portraits/men/7.jpg", "Story 7"),
+            Story("https://randomuser.me/api/portraits/men/8.jpg", "Story 8"),
+            Story("https://randomuser.me/api/portraits/men/9.jpg", "Story 9"),
+            Story("https://randomuser.me/api/portraits/men/10.jpg", "Story 10")
+        )
     )
 
     Column(
