@@ -23,9 +23,10 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ProfileHeader(
-    backClick: () -> Unit = {},
-    notificationClick: () -> Unit = {},
-    optionsClick: () -> Unit = {},
+    backClick: () -> Unit,
+    notificationClick: () -> Unit,
+    optionsClick: () -> Unit,
+    username: String,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -41,7 +42,7 @@ fun ProfileHeader(
                         contentDescription = "arrow back")
                 }
                 Spacer(modifier = Modifier.width(16.dp))
-                Text(text = "odikil999",
+                Text(text = username,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -75,5 +76,5 @@ private fun ProfileHeaderOptions(
 @Preview(showBackground = true)
 @Composable
 fun ProfileHeaderPreview() {
-    ProfileHeader()
+    ProfileHeader({}, {}, {}, "odikil999")
 }

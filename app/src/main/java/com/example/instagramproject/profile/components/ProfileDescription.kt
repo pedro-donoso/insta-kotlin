@@ -10,16 +10,18 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ProfileDescription(
+    name: String,
+    description: String,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier.fillMaxWidth()) {
-        Text(text = "Pedro", fontWeight = FontWeight.Bold)
-        Text(text = "Descripción")
+        Text(text = name, fontWeight = FontWeight.Bold)
+        Text(text = description)
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ProfileDescriptionPreview() {
-    ProfileDescription()
+    ProfileDescription("Pedro", "Mi gran descripción")
 }

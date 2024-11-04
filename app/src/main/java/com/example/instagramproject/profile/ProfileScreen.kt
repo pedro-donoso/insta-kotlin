@@ -32,10 +32,18 @@ fun ProfileScreen() {
         ProfileHeader(
             backClick = {},
             notificationClick = {},
-            optionsClick = {}
+            optionsClick = {},
+            username = user.username
         )
-        ProfileInformation()
+        ProfileInformation(
+            imageUrl = user.profileImageUrl,
+            posts = user.posts,
+            followers = user.followers,
+            following = user.following
+        )
         ProfileDescription(
+            name = user.name,
+            description = user.description,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 4.dp)
         )
     }
